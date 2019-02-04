@@ -1,5 +1,10 @@
 from flask import Flask, render_template, url_for
+#from python_secrets import secrets
+from forms import RegistrationForm, LoginForm
+
 app = Flask(__name__)
+
+#app.config['KEY'] = secrets.generate_token_hex(12)
 
 posts = [{'author': 'James',
          'title': 'blogpost1',
@@ -24,6 +29,16 @@ def name():
 @app.route("/about")
 def about():
     return render_template('about.html', title='About')
+
+@app.route("/register")
+def register():
+    form = RegistrationForm()
+    return render_template('register.html', title='Register', form=form)
+
+@app.route("/login")
+def login():
+    login = LoginForm()
+    return render_template('login.html', title='Login', form=login)
 
 if __name__ == '__name__':
     app.run(debug=True)
