@@ -20,7 +20,7 @@ Jinja2==2.10
 lxml==4.3.0
 MarkupSafe==1.1.0
 morph==0.1.4
-numpy==1.15.4
+numpy==1.22.0
 packaging==19.0
 pbr==5.1.1
 pluggy==0.8.1
